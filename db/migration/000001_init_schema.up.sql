@@ -10,7 +10,7 @@ CREATE TABLE public.transfers (
 CREATE TABLE public.entries (
 	id bigserial NOT NULL,
 	account_id int8 NOT NULL,
-	amount int8 NOT NULL,
+	ammount int8 NOT NULL,
 	created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT pk_entries PRIMARY KEY (id)
 );
@@ -18,7 +18,7 @@ CREATE TABLE public.entries (
 CREATE TABLE public.accounts (
 	id bigserial NOT NULL,
 	"owner" varchar NOT NULL,
-	balance int8 NULL,
+	balance int8 NOT NULL,
 	currency varchar NOT NULL,
 	created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT pk_accounts PRIMARY KEY (id)
